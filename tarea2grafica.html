@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<canvas id="ejemplo1" width="400" height="400"></canvas>
+<canvas id="ejemplo2" width="400" height="400"></canvas>
+<canvas id="ejemplo3" width="400" height="400"></canvas>
+<canvas id="ejemplo4" width="400" height="400"></canvas>
+<canvas id="ejemplo5" width="400" height="400"></canvas>
+<canvas id="ejemplo6" width="400" height="400"></canvas>
+<canvas id="ejemplo7" width="400" height="400"></canvas>
+<canvas id="ejemplo8" width="400" height="400"></canvas>
+<canvas id="ejemplo9" width="400" height="400"></canvas>
+<canvas id="ejemplo10" width="400" height="400"></canvas>
+<canvas id="ejemplo11" width="400" height="400"></canvas>
+<canvas id="ejemplo12" width="400" height="400"></canvas>
+<canvas id="ejemplo13" width="400" height="400"></canvas>
+<canvas id="ejemplo14" width="400" height="400"></canvas>
+<canvas id="ejemplo15" width="400" height="400"></canvas>
+<canvas id="ejemplo16" width="400" height="400"></canvas>
+<canvas id="ejemplo17" width="400" height="400"></canvas>
+
+<script>
+
+    let canvas1 = document.getElementById("ejemplo1");
+    let contexto1 = canvas1.getContext("2d");
+    contexto1.fillStyle="#0000FF";
+    contexto1.beginPath();
+    contexto1.moveTo(100,300);
+    contexto1.lineTo(300,300);
+    contexto1.lineTo(200,100);
+    contexto1.closePath();
+    contexto1.fill();
+
+
+    let canvas2 = document.getElementById("ejemplo2");
+    let contexto2 = canvas2.getContext("2d");
+    contexto2.fillStyle="#00FF00"
+    contexto2.fillRect(0,0,400,200);
+
+
+    let canvas3 = document.getElementById("ejemplo3");
+    let contexto3 = canvas3.getContext("2d");
+    contexto3.fillStyle="#000000"
+    contexto3.beginPath();
+    contexto3.arc(200,200,200,0,Math.PI,false);
+    contexto3.closePath();
+    contexto3.fill();
+
+
+    let canvas4 = document.getElementById("ejemplo4");
+    let contexto4 = canvas4.getContext("2d");
+    contexto4.fillStyle="#FF0000"
+    contexto4.beginPath();
+    contexto4.arc(200,200,100,0,Math.PI,false);
+    contexto4.closePath();
+    contexto4.fill();
+
+
+    let canvas5 = document.getElementById("ejemplo5");
+    let contexto5 = canvas5.getContext("2d");
+    contexto5.fillStyle="#FF0000"
+    contexto5.fillRect(0,0,400,100);
+
+    contexto5.fillStyle="#FCD116";
+    contexto5.fillRect(0,100,400,100);
+
+    contexto5.fillStyle="#008542";
+    contexto5.fillRect(0,200,400,100);
+
+
+    let canvas6 = document.getElementById("ejemplo6");
+    let contexto6 = canvas6.getContext("2d");
+    contexto6.fillStyle="#87CEEB"
+    contexto6.fillRect(0,0,400,100);
+
+    contexto6.fillStyle="#FFFFFF";
+    contexto6.fillRect(0,100,400,100);
+
+    contexto6.fillStyle="#87CEEB";
+    contexto6.fillRect(0,200,400,100);
+
+
+    let canvas7 = document.getElementById("ejemplo7");
+    let contexto7 = canvas7.getContext("2d");
+    contexto7.fillStyle="#FF0000"
+    contexto7.beginPath();
+    contexto7.arc(200,200,50,0,2*Math.PI,false);
+    contexto7.closePath();
+    contexto7.fill();
+
+
+    let canvas8 = document.getElementById("ejemplo8");
+    let contexto8 = canvas8.getContext("2d");
+    function drawPentagon(x,y,size)
+    {
+        contexto8.beginPath();
+        contexto8.moveTo(x + size * Math.cos(0), y + size * Math.sin(0));
+
+        for (let i = 1; i <= 5; i += 1)
+        {
+            contexto8.lineTo(
+                x + size * Math.cos(i * 2 * Math.PI / 5),
+                y + size * Math.sin(i * 2 * Math.PI / 5)
+            );
+        }
+        contexto8.fillStyle = "#00FF00";
+        contexto8.fill();
+        contexto8.closePath();
+    }
+    drawPentagon(200,200,100);
+
+
+
+    let canvas9 = document.getElementById("ejemplo9");
+    let contexto9 = canvas9.getContext("2d");
+    function drawHexagon(x, y, size)
+    {
+        contexto9.beginPath();
+        contexto9.moveTo(x + size * Math.cos(0), y + size * Math.sin(0));
+
+        for (let i = 1; i <= 6; i++)
+        {
+            contexto9.lineTo(
+                x + size * Math.cos(i * 2 * Math.PI / 6),
+                y + size * Math.sin(i * 2 * Math.PI / 6)
+            );
+        }
+        contexto9.fillStyle = "#FF00FF";
+        contexto9.fill();
+        contexto9.closePath();
+
+    }
+    drawHexagon(200,200,100);
+
+
+    let canvas10 = document.getElementById("ejemplo10");
+    let contexto10 = canvas10.getContext("2d");
+    var x = 400 / 2;
+    var y = 400 / 2;
+    var r = [100, 80, 60, 40, 20];
+    var c = ["#FF0000", "#FFFFFF", "#FF0000", "#FFFFFF", "#FF0000"];
+    function drawTarget(x,y,r,c)
+    {
+        for (var i = 0; i < r.length; i++)
+        {
+            contexto10.beginPath();
+            contexto10.arc(x, y, r[i], 0, 2 * Math.PI);
+            contexto10.fillStyle = c[i];
+            contexto10.fill();
+            contexto10.closePath();
+        }
+    }
+    drawTarget(200,200,r,c);
+
+    let canvas11 = document.getElementById("ejemplo11");
+    let contexto11 = canvas11.getContext("2d");
+
+        contexto11.beginPath();
+        contexto11.moveTo(50, 200);
+        contexto11.lineTo(200, 50);
+        contexto11.lineTo(350, 200);
+        contexto11.closePath();
+        contexto11.fillStyle = "#DE2E03";
+        contexto11.fill();
+
+        contexto11.fillStyle = "#FFEDBA";
+        contexto11.fillRect(75, 200, 250, 200);
+
+        contexto11.fillStyle = "#804000";
+        contexto11.fillRect(175, 300, 50, 100);
+
+        contexto11.fillStyle = "#00AAE4";
+        contexto11.fillRect(100, 225, 50, 50);
+        contexto11.fillRect(250, 225, 50, 50);
+
+
+    let canvas12 = document.getElementById("ejemplo12");
+    let contexto12 = canvas12.getContext("2d");
+        contexto12.fillStyle = '#FE7D6A';
+        contexto12.fillRect(50, 50, 300, 300);
+
+        contexto12.beginPath();
+        contexto12.fillStyle = '#D53032';
+        contexto12.moveTo(200, 50);
+        contexto12.quadraticCurveTo(300, 100, 300, 200);
+        contexto12.lineTo(250, 300);
+        contexto12.lineTo(150, 300);
+        contexto12.lineTo(100, 200);
+        contexto12.quadraticCurveTo(100, 100, 200, 50);
+        contexto12.fill();
+
+        contexto12.beginPath();
+        contexto12.fillStyle = '#000000';
+        contexto12.arc(190, 120, 5, 0, Math.PI * 2);
+        contexto12.fill();
+        contexto12.beginPath();
+        contexto12.arc(220, 150, 5, 0, Math.PI * 2);
+        contexto12.fill();
+        contexto12.beginPath();
+        contexto12.arc(160, 160, 5, 0, Math.PI * 2);
+        contexto12.fill();
+
+
+
+    let canvas13 = document.getElementById("ejemplo13");
+    let contexto13 = canvas13.getContext("2d");
+
+    for (let i = 0; i < 400; i += 10)
+    {
+        contexto13.moveTo(i,0);
+        contexto13.lineTo(i,400);
+    }
+    contexto13.strokeStyle = "#0000FF";
+    contexto13.lineWidth = 2;
+    contexto13.stroke();
+
+
+
+    let canvas14 = document.getElementById("ejemplo14");
+    let contexto14 = canvas14.getContext("2d");
+
+    for (let i = 0; i < 400; i += 10)
+    {
+        contexto14.moveTo(0,i);
+        contexto14.lineTo(400,i);
+    }
+
+    contexto14.strokeStyle = "#FF0000";
+    contexto14.lineWidth = 2;
+    contexto14.stroke();
+
+
+    let canvas15 = document.getElementById("ejemplo15");
+    let contexto15 = canvas15.getContext("2d");
+
+    for (let i = 0; i < 400; i += 10)
+    {
+        contexto15.moveTo(0,i);
+        contexto15.lineTo(400,i);
+    }
+    for (let i = 0; i < 400; i += 10)
+    {
+        contexto15.moveTo(i,0);
+        contexto15.lineTo(i,400);
+    }
+
+    contexto15.strokeStyle = "#FF0000";
+    contexto15.lineWidth = 2;
+    contexto15.stroke();
+
+
+    let canvas16 = document.getElementById("ejemplo16");
+    let contexto16 = canvas16.getContext("2d");
+    for (let i = 0; i < 400; i++)
+    {
+        let x = 200 + i * 10;
+        contexto16.beginPath();
+        contexto16.arc(400,200,x,0,2*Math.PI);
+        contexto16.arc(0,200,x,0,2*Math.PI);
+        contexto16.closePath();
+        contexto16.stroke();
+    }
+
+
+    let canvas17 = document.getElementById("ejemplo17");
+    let contexto17 = canvas17.getContext("2d");
+
+    contexto17.beginPath();
+    contexto17.moveTo(10,0);
+    contexto17.lineTo(400,10);
+    contexto17.closePath();
+    contexto17.strokeStyle = "#00FF00";
+    contexto17.lineWidth = 2;
+    contexto17.stroke();
+
+</script>
+</body>
+</html>
